@@ -15,7 +15,7 @@
   width: 100%;
   padding: 5px 0;
   background: #5c5c61;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px rgba(5, 5, 5, 0.507);
   user-select: none;
   transition: bottom 0.4s;
 }
@@ -78,9 +78,22 @@
 }
 
 .keyboard__key--active::after {
-  background: #00b7ff;
+  background: #ff0000c0;
 }
 
 .keyboard__key--dark {
   background: rgba(0, 0, 0, 0.25);
+}
+
+.fon {
+  background-color: rgba(165, 42, 42, 0.082);
+}
+
+body {
+  background: rgba(105, 105, 105, 0.185);
+}
+
+.text_position_left {
+  justify-content: left;
+  padding-left: 1%;
 }

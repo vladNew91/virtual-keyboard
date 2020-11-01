@@ -91,9 +91,9 @@ const Keyboard = {
       ".",
       "?",
       "En/Ru",
+      "space",
       "<",
       ">",
-      "space",
     ];
 
     // Creates HTML for an icon
@@ -130,7 +130,25 @@ const Keyboard = {
             "keyboard__key--wide",
             "keyboard__key--activatable"
           );
-          keyElement.innerHTML = createIconHTML("keyboard_capslock");
+          keyElement.innerHTML = createIconHTML("text_format");
+
+          keyElement.addEventListener("click", () => {
+            this._toggleCapsLock();
+            keyElement.classList.toggle(
+              "keyboard__key--active",
+              this.properties.capsLock
+            );
+          });
+
+          break;
+
+        case "Shift":
+          keyElement.classList.add(
+            "keyboard__key--wide",
+            "keyboard__key--activatable",
+            "text_position_left"
+          );
+          keyElement.innerHTML = createIconHTML("north");
 
           keyElement.addEventListener("click", () => {
             this._toggleCapsLock();
@@ -153,24 +171,17 @@ const Keyboard = {
 
           break;
 
-        case "Shift":
-          keyElement.classList.add("keyboard__key--wide");
-          keyElement.innerHTML = "Shift";
-          ///////////////////////////////////////////////////////////
-
-          break;
-
         case "En/Ru":
           keyElement.classList.add("keyboard__key--wide");
           keyElement.innerHTML = "En/Ru";
-          ///////////////////////////////////////////////////////////
+          keyElement.innerHTML = createIconHTML("translate");
 
           break;
 
         case ">":
           keyElement.classList.add("keyboard__key--wide");
           keyElement.innerHTML = ">";
-          //keyElement.innerHTML = createIconHTML("keyboard_left");
+          keyElement.innerHTML = createIconHTML("arrow_right");
           ///////////////////////////////////////////////////////////
 
           break;
@@ -178,6 +189,7 @@ const Keyboard = {
         case "<":
           keyElement.classList.add("keyboard__key--wide");
           keyElement.innerHTML = "<";
+          keyElement.innerHTML = createIconHTML("arrow_left");
           ///////////////////////////////////////////////////////////
 
           break;
